@@ -1,0 +1,550 @@
+/* =========================================
+   RESET & VARIABLES (SOFT LIGHT THEME)
+   ========================================= */
+:root {
+  /* Palette: Soft Light Mode (Eye-friendly) */
+  --bg-body: #F2F0EB;       /* Теплый бумажный оттенок, не режет глаза */
+  --bg-surface: #FDFBF7;    /* Очень светлый крем для карточек */
+  --bg-dark: #1C1C1C;       /* Темный блок для контраста */
+  
+  --text-main: #2A2A2A;     /* Темно-серый, мягче чем черный */
+  --text-secondary: #5A5A5A;/* Мягкий серый для описаний */
+  --text-on-dark: #E0E0E0;
+  
+  --accent: #A68B5B;        /* Более спокойное, матовое золото */
+  --accent-hover: #8C7349;
+  
+  --border-light: #DSDSCC;  /* Едва заметные границы */
+  --border-dark: #333333;
+  
+  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  
+  --container: 1200px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+[data-theme="dark"] {
+  --bg-body: #121212;
+  --bg-surface: #1E1E1E;
+  --bg-dark: #000000;
+  
+  --text-main: #EAEAEA;
+  --text-secondary: #A0A0A0;
+  
+  --accent: #D4AF37;
+  --accent-hover: #F2C94C;
+  
+  --border-light: #333333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; object-fit: cover; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 80px;
+  background: var(--bg-body); /* Используем цвет фона body, чтобы шапка не выделялась полосой */
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05); /* Очень легкая линия */
+  display: flex;
+  align-items: center;
+}
+
+.header__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo__img {
+  height: 45px; /* Чуть увеличил логотип */
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav__link {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.nav__link:hover { color: var(--text-main); }
+.nav__link:hover::after { width: 100%; }
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--text-main);
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: rotate(180deg);
+}
+
+.theme-toggle__icon {
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+  padding-top: 140px;
+  padding-bottom: 80px;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero__label {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: var(--text-main);
+}
+
+.hero__desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.btn {
+  padding: 16px 32px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn--primary {
+  background: var(--text-main);
+  color: var(--bg-body);
+}
+
+.btn--primary:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn--text {
+  color: var(--text-main);
+  padding: 0;
+}
+
+.btn--text:hover { color: var(--accent); }
+
+/* Hero Image Styling */
+.hero__visual {
+  position: relative;
+}
+
+.hero__img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,0.1); /* Мягкая рамка */
+  padding: 10px;
+  background: transparent;
+}
+
+.hero__badge {
+  position: absolute;
+  bottom: 40px;
+  left: -20px;
+  background: var(--bg-surface);
+  padding: 20px 30px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Очень мягкая тень */
+}
+
+.hero__badge span {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.hero__badge small {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   SECTIONS COMMON
+   ========================================= */
+.section { padding: 100px 0; }
+
+/* Убрал серый фон у секций, чтобы не рябило в глазах. 
+   Вместо этого используем отступы и типографику */
+.section--gray { 
+  background: var(--bg-surface); 
+  border-top: 1px solid rgba(0,0,0,0.03);
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.section--dark { background: var(--bg-dark); color: #fff; }
+
+.section-header { margin-bottom: 60px; }
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.text-white { color: #fff; }
+.line { width: 60px; height: 2px; background: var(--accent); }
+
+/* Reveal Animation Class */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   ABOUT (Split Layout)
+   ========================================= */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.split-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: grayscale(10%); /* Меньше контраста в ч/б */
+}
+
+.split-content p {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.stats-list {
+  margin-top: 40px;
+  display: flex;
+  gap: 50px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 30px;
+}
+
+.stats-list strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.stats-list span {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   SERVICES GRID
+   ========================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--bg-surface);
+  padding: 40px 30px;
+  border: 1px solid rgba(0,0,0,0.05); /* Почти незаметная граница */
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.service-num {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--accent);
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   PORTFOLIO
+   ========================================= */
+.portfolio-list {
+  display: grid;
+  gap: 40px;
+}
+
+.portfolio-item {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(0,0,0,0.05);
+  background: var(--bg-surface);
+}
+
+.portfolio-img {
+  height: 350px;
+  overflow: hidden;
+}
+
+.portfolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.portfolio-item:hover .portfolio-img img {
+  transform: scale(1.05);
+}
+
+.portfolio-info {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.portfolio-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.portfolio-info p {
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   CONTACTS & FORM
+   ========================================= */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.text-muted { color: #888; margin-bottom: 40px; }
+
+.contact-details .detail {
+  margin-bottom: 30px;
+}
+
+.contact-details small {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.contact-details a, .contact-details span {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.contact-details a:hover { color: var(--accent); }
+
+/* Minimal Form */
+.clean-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 2px;
+}
+
+.form-group { margin-bottom: 20px; }
+
+.clean-form input, 
+.clean-form textarea {
+  width: 100%;
+  padding: 15px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: #1C1C1C;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.clean-form input:focus, 
+.clean-form textarea:focus {
+  border-bottom-color: var(--accent);
+}
+
+.btn--gold-full {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  padding: 18px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn--gold-full:hover { background: var(--accent-hover); }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =========================================
+   MOBILE ADAPTIVE
+   ========================================= */
+@media (max-width: 900px) {
+  .hero__grid, .split-layout, .portfolio-item, .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav { display: none; } 
+  
+  .hero__img { height: 400px; }
+  .portfolio-img { height: 250px; }
+  
+  .hero__title { font-size: 2.5rem; }
+  
+  .header__inner { padding: 0 10px; }
+}
+.logo__img {
+  /* Этот фильтр делает белый цвет прозрачным */
+  /* Внимание: работает идеально только если фон картинки чисто белый */
+  mix-blend-mode: multiply; 
+}
+
+/* Если тема темная, нужно инвертировать логику или скрывать белый фон иначе */
+[data-theme="dark"] .logo__img {
+  mix-blend-mode: screen; /* В темной теме экран делает черное прозрачным, а белое оставляет */
+  filter: invert(1); /* Инвертируем цвета, чтобы логотип стал светлым на темном фоне */
+}

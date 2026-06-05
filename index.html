@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алексей Верховский — Адвокат</title>
+  <!-- Подключаем стили -->
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <!-- ЛОГОТИП-КАРТИНКА -->
+      <a href="#" class="logo">
+        <!-- Замените src на путь к вашему логотипу, например images/logo.png -->
+        <img src="images/logo.jpg" alt="Логотип Верховский" class="logo__img">
+      </a>
+
+      <nav class="nav">
+        <a href="#about" class="nav__link">Обо мне</a>
+        <a href="#services" class="nav__link">Практика</a>
+        <a href="#portfolio" class="nav__link">Кейсы</a>
+        <a href="#contacts" class="nav__link">Связь</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+        <span class="theme-toggle__icon">●</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <span class="hero__label">Юридическая защита бизнеса и личности</span>
+          <h1 class="hero__title">Закон — это инструмент,<br> а не преграда.</h1>
+          <p class="hero__desc">
+            Алексей Верховский. Адвокат с безупречной репутацией. 
+            Решаю сложные споры там, где другие видят тупик.
+          </p>
+          <div class="hero__actions">
+            <a href="#contacts" class="btn btn--primary">Обсудить дело</a>
+            <a href="#portfolio" class="btn btn--text">Смотреть кейсы &rarr;</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <!-- Качественное фото адвоката/офиса -->
+          <img src="images/ddd.jpg" alt="Адвокат в офисе" class="hero__img">
+          <div class="hero__badge">
+            <span>12+</span>
+            <small>лет практики</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- О СЕБЕ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="split-layout">
+          <div class="split-image reveal">
+            <img src="images/aaa.jpg" alt="Переговоры">
+          </div>
+          <div class="split-content reveal">
+            <h2 class="section-title">Философия защиты</h2>
+            <p>Я не просто знаю законы — я понимаю, как работает система изнутри. Мой подход строится на тотальной подготовке и стратегическом мышлении.</p>
+            <p>Каждое дело для меня — это шахматная партия, где цена ошибки слишком высока. Я беру на себя ответственность за юридическую сторону вашей жизни, чтобы вы могли сосредоточиться на главном.</p>
+            
+            <ul class="stats-list">
+              <li>
+                <strong>300+</strong>
+                <span>Выигранных процессов</span>
+              </li>
+              <li>
+                <strong>МГУ им. Ломоносова</strong>
+                <span>Юридический факультет</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="section section--gray" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Ключевые практики</h2>
+          <div class="line"></div>
+        </div>
+        
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-num">01</span>
+            <h3>Арбитраж</h3>
+            <p>Корпоративные споры, банкротство, взыскание крупных задолженностей.</p>
+          </article>
+          
+          <article class="service-card reveal">
+            <span class="service-num">02</span>
+            <h3>Уголовная защита</h3>
+            <p>Защита по экономическим преступлениям (ст. 159, 199 УК РФ). Работа на стадии проверок.</p>
+          </article>
+          
+          <article class="service-card reveal">
+            <span class="service-num">03</span>
+            <h3>Недвижимость</h3>
+            <p>Сопровождение сделок, споры о правах на имущество, легализация перепланировок.</p>
+          </article>
+          
+          <article class="service-card reveal">
+            <span class="service-num">04</span>
+            <h3>Семейное право</h3>
+            <p>Бракоразводные процессы с разделом бизнеса, брачные договоры, алименты.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОРТФОЛИО (КЕЙСЫ) -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Избранные дела</h2>
+          <div class="line"></div>
+        </div>
+
+        <div class="portfolio-list">
+          <!-- Кейс 1 -->
+          <div class="portfolio-item reveal">
+            <div class="portfolio-img">
+              <img src="images/qqq.jpg" alt="Небоскребы">
+            </div>
+            <div class="portfolio-info">
+              <span class="tag">Арбитраж</span>
+              <h3>Защита активов IT-компании</h3>
+              <p>Отбит рейдерский захват доли миноритариев. Сохранен бизнес стоимостью 200 млн ₽.</p>
+            </div>
+          </div>
+
+          <!-- Кейс 2 -->
+          <div class="portfolio-item reveal">
+            <div class="portfolio-img">
+              <img src="images/www.jpg" alt="Суд">
+            </div>
+            <div class="portfolio-info">
+              <span class="tag">Уголовное право</span>
+              <h3>Прекращение дела о мошенничестве</h3>
+              <p>Дело закрыто на стадии следствия благодаря грамотно выстроенной линии защиты.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section section--dark" id="contacts">
+      <div class="container">
+        <div class="contact-wrapper reveal">
+          <div class="contact-text">
+            <h2 class="section-title text-white">Начнем защиту?</h2>
+            <p class="text-muted">Оставьте заявку. Я лично изучу вашу ситуацию и сообщу перспективы.</p>
+            
+            <div class="contact-details">
+              <div class="detail">
+                <small>Телефон</small>
+                <a href="tel:+74950000000">+7 (999) 000-00-00</a>
+              </div>
+              <div class="detail">
+                <small>Почта</small>
+                <a href="mailto:law@verkhovsky.ru">law@verkhovsky.ru</a>
+              </div>
+              <div class="detail">
+                <small>Офис</small>
+                <span>Москва, Пресненская наб., 12</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="clean-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Email или телефон" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" rows="4" placeholder="Кратко о сути вопроса"></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold-full">Отправить запрос</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>&copy; 2026 Верховский.Адвокат</span>
+      <span class="footer-copy">Политика конфиденциальности</span>
+    </div>
+  </footer>
+
+  <!-- Подключаем скрипт -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>
